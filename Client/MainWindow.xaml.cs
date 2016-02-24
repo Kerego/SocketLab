@@ -36,6 +36,8 @@ namespace Client
 				if(InputBox.Text == "%Close")
 				{
 					_socket.Close();
+					textBlock.Inlines.Add(new Run($"Me : {InputBox.Text}") { Foreground = new SolidColorBrush(Colors.Green) });
+					textBlock.Inlines.Add(new LineBreak());
 					textBlock.Inlines.Add(new Run($"Closed") { Foreground = new SolidColorBrush(Colors.Red) });
 					textBlock.Inlines.Add(new LineBreak());
 					InputBox.Text = string.Empty;
